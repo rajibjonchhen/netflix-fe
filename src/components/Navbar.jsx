@@ -5,7 +5,7 @@ import user from '../user.png';
 import { Link } from "react-router-dom";
 const NavBar =({setSearch}) => {
   
-const[searchString ,setSearchString]=useState(null)
+const[searchString ,setSearchString]=useState('')
 const[ display,setDisplay]=useState(false)
 
  const searchHandler = (e) => {
@@ -25,7 +25,7 @@ const[ display,setDisplay]=useState(false)
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Link to='/'>
-                            <div active className="nav-link font-weight-bold" onClick={(e) => setSearch("")}>
+                            <div className="nav-link font-weight-bold" onClick={(e) => setSearch("")}>
                             Home</div>
                             </Link>
 

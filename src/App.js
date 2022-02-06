@@ -28,24 +28,24 @@ setSearchQuery(search)
             <Home searchQuery={searchQuery}/>
         </MyLayout>}/>
        
-          <Route path='/TvShow' element={<MyLayout>
+          <Route path='/TvShow' element={<MyLayout setSearch={setSearch}>
             <TvShowPage/>
           </MyLayout>}/>
 
-          <Route path='/MovieDetail/:MovieId' element={<MyLayout>
+          <Route path='/MovieDetail/:MovieId' element={<MyLayout setSearch={setSearch}>
             <MovieDetail/>
           </MyLayout>}/>
         
          
-        <Route path='/Movies' element={<MyLayout>
+        <Route path='/Movies' element={<MyLayout setSearch={setSearch}>
             <MoviesPage/>
           </MyLayout>}/>
 
-          <Route path='/Recent' element={<MyLayout>
+          <Route path='/Recent' element={<MyLayout setSearch={setSearch}>
             <RecentlyAddedPage/>
           </MyLayout>}/>
 
-          <Route path='/MyList' element={<MyLayout>
+          <Route path='/MyList' element={<MyLayout setSearch={setSearch}>
             <MyList/>
           </MyLayout>}/>
 

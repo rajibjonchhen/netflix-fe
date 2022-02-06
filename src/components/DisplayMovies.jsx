@@ -7,7 +7,7 @@ const DisplayMovies = ({movieList})=> {
         return (
         <>
             {
-            movieList.map(movie => <Link to={'/MovieDetail/' + movie.imdbID}><CardSearch key={movie.imdbID} movie={movie}></CardSearch></Link>)}
+            movieList.map(movie => <Link to={'/MovieDetail/' + movie.imdbID}  key={movie.imdbID}><CardSearch movie={movie}></CardSearch></Link>)}
         </>);
     
 }
