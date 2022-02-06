@@ -5,7 +5,7 @@ import user from '../user.png';
 import { Link } from "react-router-dom";
 const NavBar =({setSearch}) => {
   
-const[searchString ,setSearchString]=useState("")
+const[searchString ,setSearchString]=useState(null)
 const[ display,setDisplay]=useState(false)
 
  const searchHandler = (e) => {
@@ -18,7 +18,7 @@ const[ display,setDisplay]=useState(false)
 
  
     return (
-                    <Navbar variant="dark" expand="lg" style={{ backgroundColor: "black" }}>
+                    <Navbar variant="dark" expand="lg" style={{ backgroundColor: "black", position:'fixed',top:'0',width:'100%',zIndex:'2' }}>
                         <Navbar.Brand href="/">
                         <Image src={brand} style={{ width: "100px" }} fluid /> </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />

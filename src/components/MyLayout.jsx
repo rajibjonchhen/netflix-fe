@@ -7,7 +7,9 @@ const MyLayout = ({setSearch, children})=>{
     return(
         <>
        <NavBar setSearch ={setSearch}/>
+        <div style={{minHeight:'70vh'}}>
         {children}
+        </div>
        <MyFooter />
         </>
     )

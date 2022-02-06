@@ -5,13 +5,14 @@ import DisplayMovies from './DisplayMovies'
 import './style.css'
 
 
-const Section =({title, heading})=>{
+const Section =({title, heading, showSearch})=>{
     
     const[movieList,setMovieList]=useState([])
     const[isLoading,setIsLoading]=useState(false)
     const[errorHandle,setErrorHandle]=useState(false)
 
     useEffect(()=>{
+    
     fetchMovie(title)
     console.log(title)
     },[title])
@@ -43,11 +44,11 @@ const Section =({title, heading})=>{
 
         return (
             <>
-                <Container className="bodySectionBG px-4" fluid>
-                    <h4 className="mb-n2 mt-2">
+                <Container className="bodySectionBG px-4" fluid  style={{paddingTop: showSearch? '100px':'0'}}> 
+                    <h4 className="mb-n2 mt-2" >
                         {heading} Movies
                     </h4>
-                    <Row className="row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 px-3 row__posters">
+                    <Row className= {`row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 px-3 row__posters ${showSearch && 'flex-wrap'}`}>
                         {isLoading && (<Loading></Loading>)}
 
 

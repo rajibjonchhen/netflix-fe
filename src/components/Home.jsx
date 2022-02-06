@@ -6,11 +6,9 @@ const Home = ({searchQuery}) => {
     const defaultMovies = ['Harry Potter','Marvel','Horror','Lord of the Rings']
     
     const[ category, setCategory] = useState(defaultMovies)
-    const[ showSearch, setShowSearch] = useState(false)
+    const[ showSearch, setShowSearch] = useState(true)
 useEffect(()=>{
-    if(searchQuery){
-        setShowSearch(true)
-    }
+   
 },[])
 
 const setGenre = (category) =>{
