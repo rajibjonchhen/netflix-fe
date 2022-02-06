@@ -10,10 +10,11 @@ const MyFooter = () => {
           justifyContent: "start",
           backgroundColor: "#141414",
           width: "",
+          marginBottom:'0'
         }}
       >
         <Row>
-          <Col className="d-flex">
+          <Col  className="d-flex">
             <p className="m-3 text-light">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +65,7 @@ const MyFooter = () => {
             </p>
           </Col>
         </Row>
-        <Row className="text-muted">
+        <Row className="text-muted row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
           <Col className="text-left">
             <p>Audio and Subtitles</p>
             <p>Media Centre</p>

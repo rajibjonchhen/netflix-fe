@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import {Card,} from 'react-bootstrap'
+import {Card,Row, Col} from 'react-bootstrap'
 import Loading from './Loading'
 
 const MovieDetail = () => {
@@ -39,13 +39,13 @@ const MovieDetail = () => {
     return(<div>
     
        
-        {movie? (<div className="d-flex justify-content-center" style={{padding:'100px'}}>
-                    <div>
+        {movie? (<Row className="movieDetailPage d-flex justify-content-center row-cols-sm-1 row-cols-md-2" style={{padding:'100px'}}>
+                    <Col>
                     <Card className='px-1 py-4 mr-4 m-0 border-0 w-100 bg-transparent' style={{maxWidth:"18rem"}}>
                         <Card.Img className="img-poster align-self-center" variant="top" src={movie.Poster} />
                     </Card> 
-                    </div>
-                        <div className="text-left py-4 pl-5 w-100 ">
+                    </Col>
+                        <Col className="text-left py-4 w-100 ">
                                  <p className='h4'> <span>{movie.Title}</span> </p>
                                  <p className='w-100'>Year : <span>{movie.Year}</span> </p>
                                  <p>Released on : <span>{movie.Released}</span> </p>
@@ -53,10 +53,11 @@ const MovieDetail = () => {
                                  <p>Actors : <span>{movie.Actor}</span> </p>
                                  <p>Directors : <span>{movie.Director}</span> </p>
                                  <p>IMDB Rating: <span>{movie.imdbRating}</span> </p>
-                                <p className='w-50'>Plot:  <br/> <span >{movie.Plot}</span> </p>
-                        </div>
+                                 <p>Plot:</p>
+                                <p className='w-100'>  {movie.Plot} </p>
+                        </Col>
                
-            </div>):(<Loading/>)}
+            </Row>):(<Loading/>)}
     </div>
     )
     // {

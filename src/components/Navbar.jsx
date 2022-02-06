@@ -18,7 +18,7 @@ const[ display,setDisplay]=useState(false)
 
  
     return (
-                    <Navbar variant="dark" expand="lg" style={{ backgroundColor: "black", position:'fixed',top:'0',width:'100%',zIndex:'2' }}>
+                    <Navbar variant="dark" expand="lg" style={{ backgroundColor: "black", position:'sticky',top:'0',width:'100%',zIndex:'2' }}>
                         <Navbar.Brand href="/">
                         <Image src={brand} style={{ width: "100px" }} fluid /> </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -53,9 +53,9 @@ const[ display,setDisplay]=useState(false)
                                 onChange={searchHandler}
                                 value={searchString}
                             />
-                            <div  onClick={()=>setDisplay(!display)}><i className="text-white bi bi-search"></i></div>
-                            <div  className="text-white">KIDS</div>
-                            <div ><i className=" text-white bi bi-bell-fill"></i> </div>
+                            <div  onClick={()=>setDisplay(!display)}><i className="text-white bi bi-search mx-2"></i></div>
+                            <div  className="text-white mx-2">KIDS</div>
+                            <div ><i className=" text-white bi bi-bell-fill mx-2"></i> </div>
                             <div ><Image src={user} width="40px" /></div>
                         </span>
                         </Navbar.Collapse>

@@ -17,7 +17,7 @@ class TvShows extends Component {
 
   render() {
     return (
-      <Row className="my-4" style={{paddingTop:"50px"}}>
+      <Row className="my-4">
         <Col md={2} className="d-flex justify-content-center mt-3" >
 
           <h3 className="  text-white ">TV Shows</h3>
