@@ -39,15 +39,15 @@ const MovieDetail = () => {
     return(<div>
     
        
-        {movie? (<div className="d-flex justify-content-center">
+        {movie? (<div className="d-flex justify-content-center" style={{padding:'100px'}}>
                     <div>
                     <Card className='px-1 py-4 mr-4 m-0 border-0 w-100 bg-transparent' style={{maxWidth:"18rem"}}>
                         <Card.Img className="img-poster align-self-center" variant="top" src={movie.Poster} />
                     </Card> 
                     </div>
-                        <div className="text-left pt-2 pl-5 w-100 ">
+                        <div className="text-left py-4 pl-5 w-100 ">
+                                 <p className='h4'> <span>{movie.Title}</span> </p>
                                  <p className='w-100'>Year : <span>{movie.Year}</span> </p>
-                                 <p>Title : <span>{movie.Title}</span> </p>
                                  <p>Released on : <span>{movie.Released}</span> </p>
                                  <p>Genre : <span>{movie.Genre}</span> </p>
                                  <p>Actors : <span>{movie.Actor}</span> </p>

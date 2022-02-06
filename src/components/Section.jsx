@@ -46,7 +46,7 @@ const Section =({title, heading, showSearch})=>{
             <>
                 <Container className="bodySectionBG px-4" fluid  style={{paddingTop: showSearch? '100px':'0'}}> 
                     <h4 className="mb-n2 mt-2" >
-                        {heading} Movies
+                        {heading} 
                     </h4>
                     <Row className= {`row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 px-3 row__posters ${showSearch && 'flex-wrap'}`}>
                         {isLoading && (<Loading></Loading>)}
