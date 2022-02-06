@@ -12,8 +12,10 @@ const Section =({title, heading})=>{
     const[errorHandle,setErrorHandle]=useState(false)
 
     useEffect(()=>{
-    fetchMovie()
-    },[])
+    fetchMovie(title)
+    console.log(title)
+    },[title])
+    
    const fetchMovie = async () => {
         try {
 

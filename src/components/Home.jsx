@@ -2,16 +2,28 @@ import React, {useState,useEffect} from "react";
 import Section from "./Section";
 import TvShows from "./TvShows";
 
-const Home = ({search}) => {
+const Home = ({searchQuery}) => {
+    const defaultMovies = ['Harry Potter','Marvel','Horror','Lord of the Rings']
+    
+    const[ category, setCategory] = useState(defaultMovies)
+    const[ showSearch, setShowSearch] = useState(false)
+useEffect(()=>{
+    if(searchQuery){
+        setShowSearch(true)
+    }
+},[])
 
+const setGenre = (category) =>{
+    setCategory(category)
+}
     return(
         <>
-        <TvShows /> 
-        {search? ( <Section heading="Search Results" title={search} />) : (<>
-                  <Section heading="Harry Potter" title="Harry Potter"/>
-                  <Section heading="Marvel" title="Marvel"/>
-                  <Section heading="Lord of the Rings" title="Lord of the Rings"/>
-                  <Section heading="Horror" title="Horror"/>
+       {!searchQuery && <TvShows setGenre={setGenre} category={category}/> }
+        {searchQuery? ( <Section heading="Search Results" title={searchQuery} showSearch={showSearch} />) : (<>
+                  <Section heading={category[0]} title={category[0]}/>
+                  <Section heading={category[1]} title={category[1]}/>
+                  <Section heading={category[2]} title={category[2]}/>
+                  <Section heading={category[3]} title={category[3]}/>
                 </>)}
         </>
     )

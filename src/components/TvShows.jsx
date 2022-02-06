@@ -2,10 +2,21 @@ import React, { Component } from "react";
 import { Col, Row } from "react-bootstrap";
 
 class TvShows extends Component {
+  state = {
+    genre : "Genre"
+  }
+
+    action = ['Adventure','Man in Black','Marvel','Action']
+    comedy = ['The Mask','Comedy','Funny', 'Laughter']
+    romance= ['Love Story','Love','Romantic','you']
+  
+    handleCategory = (category,setGenre) => {
+    this.props.setGenre(category)
+    this.setState({genre:setGenre})
+  }
+
   render() {
     return (
-
-
       <Row className="my-4">
         <Col md={2} className="d-flex justify-content-center mt-3" >
 
@@ -23,12 +34,12 @@ class TvShows extends Component {
               text-white
               border border-white
             " type="button" data-toggle="dropdown" aria-expanded="false">
-            Genres
+            {this.state.genre}
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="#">Action</a>
-            <a className="dropdown-item" href="#">Comedy</a>
-            <a className="dropdown-item" href="#">Romance</a>
+            <a className="dropdown-item" onClick={(e) => this.handleCategory(this.action,'Action')} href="#">Action</a>
+            <a className="dropdown-item" onClick={(e) => this.handleCategory(this.comedy,'Action')} href="#">Action</a>
+            <a className="dropdown-item" onClick={(e) => this.handleCategory(this.romance,'Romance')} href="#">Romance</a>
           </div>
         </Col>
 

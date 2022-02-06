@@ -10,37 +10,40 @@ import MoviesPage from './components/MoviesPage'
 import RecentlyAddedPage from './components/RecentlyAddedPage';
 import MyList from './components/MyList';
 import ErrorPage from './components/ErrorPage'
+
 const App =()=> {
 
-  const [search, setSearch] = useState('')
-  const [searchResult, setSearchResult] = useState([])
-
-
-  const showSearchResult = async (searchQuery) => {
-    this.setState({ search: searchQuery })
-    try {
-        let response = await fetch("http://www.omdbapi.com/?apikey=82ebb69a&s=" + searchQuery, {
-            method: "GET"
-        })
-        let data = await response.json()
-        setSearchResult({data})
-        setSearch({searchQuery})
-        console.log(data)
+  const [searchQuery, setSearchQuery] = useState(null)
+  // const [searchResult, setSearchResult] = useState([])
+  // const showSearchResult = async (searchQuery) => {
+  //   setSearch(searchQuery)
+  //   try {
+  //       let response = await fetch("http://www.omdbapi.com/?apikey=82ebb69a&s=" + searchQuery, {
+  //           method: "GET"
+  //       })
+  //       let data = await response.json()
+  //       setSearchResult({data})
+  //       setSearch({searchQuery})
+  //       console.log(data)
       
 
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
+
+const setSearch = (search) => {
+setSearchQuery(search)
+}
   
     return (
       <BrowserRouter>
       <div className="App">
         
         <Routes>
-        <Route path='/' element={<MyLayout showSearchResult={showSearchResult}>
-            <Home search={search}/>
+        <Route path='/' element={<MyLayout setSearch={setSearch}>
+            <Home searchQuery={searchQuery}/>
         </MyLayout>}/>
        
           <Route path='/TvShow' element={<MyLayout>

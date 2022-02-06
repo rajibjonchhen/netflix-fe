@@ -3,14 +3,14 @@ import { Navbar, Nav, InputGroup, FormControl, Image } from "react-bootstrap";
 import brand from '../brand.png';
 import user from '../user.png';
 import { Link } from "react-router-dom";
-const NavBar =({showSearchResult}) => {
+const NavBar =({setSearch}) => {
   
 const[searchString ,setSearchString]=useState("")
 const[ display,setDisplay]=useState(false)
 
  const searchHandler = (e) => {
     if (e.keyCode === 13) {
-      showSearchResult(searchString);
+      setSearch(searchString);
     } else {
       setSearchString(e.currentTarget.value);
     }
@@ -25,7 +25,7 @@ const[ display,setDisplay]=useState(false)
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Link to='/'>
-                            <div active className="nav-link font-weight-bold">
+                            <div active className="nav-link font-weight-bold" onClick={(e) => setSearch("")}>
                             Home</div>
                             </Link>
 
