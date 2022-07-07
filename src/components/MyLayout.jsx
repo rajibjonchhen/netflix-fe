@@ -9,7 +9,7 @@ const MyLayout = ({setSearch, children, searchQuery})=>{
         <>
        <NavBar setSearch ={setSearch}/>
         <div style={{minHeight:'70vh'}}>
-        {searchQuery.length<3? children: <Section heading="Search Result" title={searchQuery}/>}
+        {searchQuery.length>2? <Section heading="Search Result" title={searchQuery}/>:children}
         </div>
        <MyFooter />
         </>

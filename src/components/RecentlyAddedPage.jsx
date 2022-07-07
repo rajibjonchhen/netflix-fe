@@ -4,7 +4,7 @@ import Section from "./Section"
 const RecentlyAddedPage = () => {
 
     return(
-        <Section heading="movies" title="latest"/>
+        <Section heading="latest movies" title="latest"/>
         
     )
 }

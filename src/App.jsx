@@ -13,7 +13,7 @@ import ErrorPage from './components/ErrorPage'
 
 const App =()=> {
 
-  const [searchQuery, setSearchQuery] = useState(null)
+  const [searchQuery, setSearchQuery] = useState("")
 
 const setSearch = (search) => {
 setSearchQuery(search)
