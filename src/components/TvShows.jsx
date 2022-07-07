@@ -38,7 +38,7 @@ class TvShows extends Component {
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a className="dropdown-item" onClick={(e) => this.handleCategory(this.action,'Action')} href="#">Action</a>
-            <a className="dropdown-item" onClick={(e) => this.handleCategory(this.comedy,'Action')} href="#">Action</a>
+            <a className="dropdown-item" onClick={(e) => this.handleCategory(this.comedy,'Comedy')} href="#">Comedy</a>
             <a className="dropdown-item" onClick={(e) => this.handleCategory(this.romance,'Romance')} href="#">Romance</a>
           </div>
         </Col>

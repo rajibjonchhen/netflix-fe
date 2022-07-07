@@ -1,9 +1,11 @@
+import Section from "./Section"
 
 
 const RecentlyAddedPage = () => {
 
     return(
-        <h1>Recently Added Movies</h1>
+        <Section heading="movies" title="latest"/>
+        
     )
 }
 export default RecentlyAddedPage

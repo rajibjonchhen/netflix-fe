@@ -24,28 +24,28 @@ setSearchQuery(search)
       <div className="App" >
         
         <Routes>
-        <Route path='/' element={<MyLayout setSearch={setSearch}>
-            <Home searchQuery={searchQuery}/>
+        <Route path='/' element={<MyLayout setSearch={setSearch} searchQuery={searchQuery}>
+            <Home searchQuery={searchQuery} />
         </MyLayout>}/>
        
-          <Route path='/TvShow' element={<MyLayout setSearch={setSearch}>
+          <Route path='/TvShow' element={<MyLayout setSearch={setSearch} searchQuery={searchQuery}>
             <TvShowPage/>
           </MyLayout>}/>
 
-          <Route path='/MovieDetail/:MovieId' element={<MyLayout setSearch={setSearch}>
+          <Route path='/MovieDetail/:MovieId' element={<MyLayout setSearch={setSearch} searchQuery={searchQuery}>
             <MovieDetail/>
           </MyLayout>}/>
         
          
-        <Route path='/Movies' element={<MyLayout setSearch={setSearch}>
+        <Route path='/Movies' element={<MyLayout setSearch={setSearch} searchQuery={searchQuery}>
             <MoviesPage/>
           </MyLayout>}/>
 
-          <Route path='/Recent' element={<MyLayout setSearch={setSearch}>
+          <Route path='/Recent' element={<MyLayout setSearch={setSearch} searchQuery={searchQuery}>
             <RecentlyAddedPage/>
           </MyLayout>}/>
 
-          <Route path='/MyList' element={<MyLayout setSearch={setSearch}>
+          <Route path='/MyList' element={<MyLayout setSearch={setSearch} searchQuery={searchQuery}>
             <MyList/>
           </MyLayout>}/>
 

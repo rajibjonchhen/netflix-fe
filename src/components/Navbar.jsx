@@ -2,20 +2,23 @@ import { useState } from "react";
 import { Navbar, Nav, InputGroup, FormControl, Image } from "react-bootstrap";
 import brand from '../brand.png';
 import user from '../user.png';
-import { Link } from "react-router-dom";
-const NavBar =({setSearch}) => {
-  
-const[searchString ,setSearchString]=useState('')
-const[ display,setDisplay]=useState(false)
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+
+const NavBar =({setSearch, search}) => {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const[searchString ,setSearchString]=useState('')
+  const[ display,setDisplay]=useState(false)
 
  const searchHandler = (e) => {
-    if (e.keyCode === 13) {
-      setSearch(searchString);
-    } else {
-      setSearchString(e.currentTarget.value);
-    }
+    
+      setSearch(e.currentTarget.value);
+    
   };
 
+const handleNavigation = (path) => {
+  navigate(`/${path}`)
+} 
  
     return (
                     <Navbar variant="dark" expand="lg" style={{ backgroundColor: "black", position:'sticky',top:'0',width:'100%',zIndex:'2' }}>
@@ -24,24 +27,29 @@ const[ display,setDisplay]=useState(false)
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Link to='/'>
-                            <div className="nav-link font-weight-bold" onClick={(e) => setSearch("")}>
+                            
+                            <div 
+                            onClick={(e) => {handleNavigation("");setSearch("")}}
+                            className={`nav-link font-weight-bold ${location.pathname ==="/"? "active":""}`} >
                             Home</div>
-                            </Link>
-
-                            <Link to='/TvShow'>
-                            <div className="nav-link font-weight-bold">
+                            
+                            <div 
+                            onClick={(e) => {handleNavigation("TvShow")}}
+                            className={`nav-link font-weight-bold ${location.pathname ==="/TvShow"? "active":""}`} >
                             TV Shows</div>
-                            </Link>
-                            <Link to='/movies'>
-                            <div className="nav-link font-weight-bold"> Movies </div>
-                            </Link>
-                            <Link to='/Recent'>
-                            <div className="nav-link font-weight-bold">Recently Added</div>
-                            </Link>
-                            <Link to='/MyList'>
-                            <div className="nav-link font-weight-bold">My List</div>
-                            </Link>
+                            
+                            <div 
+                             onClick={(e) => {handleNavigation("movies")}}
+                            className={`nav-link font-weight-bold ${location.pathname ==="/movies"? "active":""}`} > Movies </div>
+                           
+                            <div 
+                            onClick={(e) => {handleNavigation("Recent")}}
+                            className={`nav-link font-weight-bold ${location.pathname ==="/Recent"? "active":""}`} >Recently Added</div>
+                           
+                            <div 
+                            onClick={(e) => {handleNavigation("MyList")}}
+                             className={`nav-link font-weight-bold ${location.pathname ==="/MyList"? "active":""}`} >My List</div>
+                            
                         </Nav>
                         <span className="d-flex align-items-center">
                             <FormControl
@@ -51,7 +59,7 @@ const[ display,setDisplay]=useState(false)
                                 style={{display:display? "block":"none",borderRadius:"25px",height:"30px"}}
                                 onKeyDown={searchHandler}
                                 onChange={searchHandler}
-                                value={searchString}
+                                value={search}
                             />
                             <div  onClick={()=>setDisplay(!display)}><i className="text-white bi bi-search mx-2"></i></div>
                             <div  className="text-white mx-2">KIDS</div>
